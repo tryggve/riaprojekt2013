@@ -7,7 +7,7 @@ Nu sitter jag på ett hotellrum i Malmö och alla papper från mitt möte med So
 
 Alla goda ting är tre och i korta drag kan applikationens domän beskrivas genom tre saker.
 
-![Enkel domänmodell](http://image.jpg)
+![Enkel domänmodell](https://dl.dropbox.com/u/15846165/enkel_domanmodell.png)
 
 En aktivitet har en eller flera uppgifter knutna till sig. Varje aktivitet likväl som varje uppgift har en ansvarig person. Personen kan vara en användare av systemet eller skriven i klartext.
 
