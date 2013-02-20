@@ -26,10 +26,12 @@ requirejs.config({
             exports: "Backbone"
         },
         relational: {
-            deps: ["backbone"]
+            deps: ["backbone"],
+            exports: "Backbone"
         },
         localstorage: {
-            deps: ["backbone"]
+            deps: ["backbone"],
+            exports: "Backbone"
         },
         ui: {
             deps: ["jquery"]
