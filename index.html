@@ -20,14 +20,33 @@
 
     <!--script src="scripts/libs/modernizr-2.6.2.min.js"></script -->
     <script data-main="scripts/main.js" src="scripts/libs/require.js"></script>
+
+    <script type="text/x-handlebars-template" id="indexTemplate">
+        <div>{{greeting}}</div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="addActivityTemplate">
+        <div>
+            <input type="text" placeholder="Namn på aktivitet" id="activityNameTextBox" name="activityDescriptionTextBox" class="large" />
+            <textarea name="activityDescriptionTextBox" id="activityDescriptionTextBox" cols="30" rows="10"></textarea>
+            <button id="addActivityButton">Lägg till</button>
+        </div>
+    </script>
 </head>
 <body>
 <!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<p class="chromeframe">Du verkar använda en <strong>jättegammal</strong> webbläsare. Du behöver <a href="http://browsehappy.com/">uppgradera din webbläsare</a> eller <a href="http://www.google.com/chromeframe/?redirect=true">aktivera Google Chrome Frame</a> för en bättre upplevelse.</p>
 <![endif]-->
 
+<div>
+    <ul>
+        <li><a href="/">Hem</a></li>
+        <li><a href="#activity/list">Visa alla aktiviteter</a></li>
+        <li><a href="#activity/add">Lägg till aktivitet</a></li>
+    </ul>
+</div>
 <div id="container">
-    Loading...
+    Laddar...
 </div>
 
 <!-- script>

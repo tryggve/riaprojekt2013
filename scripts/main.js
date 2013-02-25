@@ -1,7 +1,7 @@
 "use strict";
 requirejs.config({
     //Add a timestamp to the resources so it can't cache
-    urlArgs: "bust=v1." + (new Date().getTime()),
+    //urlArgs: "bust=v1." + (new Date().getTime()),
     //By default load any module IDs from scripts/app
     baseUrl: 'scripts/app',
     //paths config is relative to the baseUrl, and
@@ -43,18 +43,13 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs(["backbone", "ptsRouter"], function(Backbone, ptsRouter) {
+requirejs(["backbone", "ptsRouter", "ptsStorage"], function(Backbone, ptsRouter, ptsStorage) {
 
-    //TODO: Make work with dependency injection
-    ptsRouter.createRouter();
+    var appRouter = ptsRouter.createRouter(); //TODO: Make work with dependency injection
     Backbone.history.start();
 
+    var appCollection = ptsStorage.bootstrap("Activities");
+    console.log(appCollection);
 
-/*    var Hej = Backbone.Model.extend({
-        greeting: function() { return this.get("greeting"); }
-    });
 
-    var hej = new Hej({greeting: "Hej världen"});
-    var hejView = new HejView({model: hej});
-*/
 });

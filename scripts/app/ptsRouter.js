@@ -1,26 +1,31 @@
 "use strict";
 
-define(["backbone", "views/indexView"], function(Backbone, indexView) {
+define(["backbone", "views/indexView", "views/activityView"], function(Backbone, indexView, activityView) {
 
-    var router;
+    var Router;
 
     function createRouter() {
-        router = Backbone.Router.extend({
+        Router = Backbone.Router.extend({
             initialize: function(options) {
                 this.el = options.el;
             },
             routes: {
-                "": "index"
+                "": "index",
+                "activity/add": "addActivity"
             },
             index: function() {
                 var view = indexView.createView();
-                console.log(this.el);
                 this.el.empty();
                 this.el.append(view.render().el);
+            },
+            addActivity: function() {
+                var view = activityView.createAddView();
+                this.el.empty();
+                this.el.append(view.render().el)
             }
         });
 
-        return new router({el: $("#container")});
+        return new Router({el: $("#container")});
 
     }
 
